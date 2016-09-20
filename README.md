@@ -1,7 +1,7 @@
 # Monta Vista High School Game Development Club(MVGD)
 
-Existing Members:
-Welcome! Thank you for joining MVGD and giving trust to this brand new club. Please be active and contribute in the Discord channel. We will be communicating and posting new projects on there.
+Yay! You've successfully cloned develop!
 
-How to join:
-If you like to join, you may visit https://discord.gg/F2ZcjAb and join our official Discord channel. We look forward to be chatting with you. :)
+More Info:
+If you want to beef up on your awesome git skills, feel free to check this out:
+https://help.github.com/articles/good-resources-for-learning-git-and-github/
