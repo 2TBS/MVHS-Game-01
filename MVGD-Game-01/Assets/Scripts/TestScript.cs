@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿// Omar Hossain
+// 9/21/16
+// TestScript.cs
+
+using UnityEngine;
 using System.Collections;
 
 public class TestScript : MonoBehaviour {
