@@ -1,7 +1,4 @@
-﻿// Omar Hossain
-// 9/21/16
-// TestScript.cs
-// More comments!
+﻿//MVGD
 using UnityEngine;
 using System.Collections;
 
