@@ -1,9 +1,9 @@
 # =============== #
 # Unity generated #
 # =============== #
-MVGD-Game-01/[Tt]emp/
-MVGD-Game-01/[Oo]bj/
-MVGD-Game-01/[Bb]uild
+MVGD-Game-01/Temp/
+MVGD-Game-01/obj/
+MVGD-Game-01/Build
 MVGD-Game-01/Library
 sysinfo.txt
 *.stackdump
