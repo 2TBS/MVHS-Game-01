@@ -8,9 +8,10 @@ public class MainMenu : MonoBehaviour {
     public Canvas optionsCanvas;
     public Canvas creditsCanvas;
 
+    
 	// Use this for initialization
 	void Start () {
-        playCanvas = playCanvas.GetComponent<Canvas>();
+        playCanvas = playCanvas.GetComponentInParent<Canvas>();
         optionsCanvas = optionsCanvas.GetComponent<Canvas>();
         creditsCanvas = creditsCanvas.GetComponent<Canvas>();
     }
@@ -20,18 +21,20 @@ public class MainMenu : MonoBehaviour {
 	}
 
   	public void OpenCredits () {
-        GameObject.Find("optionsCanvas").SetActive(true);
+        creditsCanvas.GetComponentInParent<GameObject>().SetActive(true);
 	}
 
 	///Opens the options menu. Author: NULL
-	public void OpenOptions() {
-
-	}
+	public void OpenOptions()
+    {
+        optionsCanvas.GetComponentInParent<GameObject>().SetActive(true);
+    }
 
 	///Opens the play/level select menu. Author: NULL
-	public void OpenPlay () {
-        
-	}
+	public void OpenPlay ()
+    {
+        playCanvas.GetComponentInParent<GameObject>().SetActive(true);
+    }
 
 
 
