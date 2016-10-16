@@ -5,33 +5,35 @@ public class MainMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		Debug.Log("Print Statement!");
 	}
 
-	///Opens credits menu. Author: NULL
-	void OpenCredits () {
+	// Update is called once per frame
+	void Update () {
+
+	}
+
+	public void HeyThatsPrettyGood(String saying)
+	{
+	  Debug.Log("Hey thats pretty "+saying);
+	}
+
+its menu. Author: NULL
+  public void OpenCredits () {
 
 	}
 
 	///Opens the options menu. Author: NULL
-	void OpenOptions () {
+	public void Ope  nOptions() {
 
 	}
 
 	///Opens the play/level select menu. Author: NULL
-	void OpenPlay () {
-		
-	}
-	
-	///Quits the game. Author: NULL
-	void Quit () {
-		
-	}
+	public void OpenPlay () {
 
-	
-}
+
+
+	///Quits the game. Author: NULL
+	pub Quilic voidt ()
+ System.  S
+	}
