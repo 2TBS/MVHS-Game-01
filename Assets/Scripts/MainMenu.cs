@@ -13,27 +13,29 @@ public class MainMenu : MonoBehaviour {
 
 	}
 
-	public void HeyThatsPrettyGood(String saying)
+	public void HeyThatsPrettyGood(string saying)
 	{
 	  Debug.Log("Hey thats pretty "+saying);
 	}
 
-its menu. Author: NULL
-  public void OpenCredits () {
+  	public void OpenCredits () {
 
 	}
 
 	///Opens the options menu. Author: NULL
-	public void Ope  nOptions() {
+	public void OpenOptions() {
 
 	}
 
 	///Opens the play/level select menu. Author: NULL
 	public void OpenPlay () {
 
+	}
+
 
 
 	///Quits the game. Author: NULL
-	pub Quilic voidt ()
- System.  S
+	public void Quit () {
+
 	}
+}

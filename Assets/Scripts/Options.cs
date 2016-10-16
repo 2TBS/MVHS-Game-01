@@ -18,7 +18,7 @@ public class Options : MonoBehaviour {
 	public Button fullscreen;
 	public Text fullscreenLabel;
 	
-	public Controls controls;
+	//public Controls controls;
 	
 	void Start () {
 		
@@ -33,7 +33,7 @@ public class Options : MonoBehaviour {
 		mainMenu = mainMenu.GetComponent<Canvas> ();
 		fullscreen = fullscreen.GetComponent<Button> ();
 		fullscreenLabel = fullscreenLabel.GetComponent<Text> ();
-		controls = controls.GetComponent<Controls> ();
+		//controls = controls.GetComponent<Controls> ();
 
 		volume.maxValue = 100;
 		volume.minValue = 0;
@@ -118,7 +118,7 @@ public class Options : MonoBehaviour {
 		volume.value = 50;
 		resolution.value = 1;
 		} else if(controlsPanel.enabled) {
-			controls.WriteDefaultControls();
+			//controls.WriteDefaultControls();
 		}
 		
 	}
