@@ -1,25 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 
+    public Canvas playCanvas;
+    public Canvas optionsCanvas;
+    public Canvas creditsCanvas;
+
 	// Use this for initialization
 	void Start () {
-		Debug.Log("Print Statement!");
-	}
+        playCanvas = playCanvas.GetComponent<Canvas>();
+        optionsCanvas = optionsCanvas.GetComponent<Canvas>();
+        creditsCanvas = creditsCanvas.GetComponent<Canvas>();
+    }
 
 	// Update is called once per frame
 	void Update () {
-
-	}
-
-	public void HeyThatsPrettyGood(string saying)
-	{
-	  Debug.Log("Hey thats pretty "+saying);
 	}
 
   	public void OpenCredits () {
-
+        GameObject.Find("optionsCanvas").SetActive(true);
 	}
 
 	///Opens the options menu. Author: NULL
@@ -29,7 +30,7 @@ public class MainMenu : MonoBehaviour {
 
 	///Opens the play/level select menu. Author: NULL
 	public void OpenPlay () {
-
+        
 	}
 
 
