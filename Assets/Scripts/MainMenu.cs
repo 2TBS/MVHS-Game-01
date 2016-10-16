@@ -20,29 +20,27 @@ public class MainMenu : MonoBehaviour {
 	void Update () {
 	}
 
-  	public void OpenCredits () {
-        optionsCanvas.enabled = true;
-        //creditsCanvas.GetComponentInParent<GameObject>().SetActive(true);
+    ///Opens the credits menu. Author: Henry
+    public void OpenCredits () {
+        creditsCanvas.enabled = true;
 	}
 
-	///Opens the options menu. Author: NULL
+	///Opens the options menu. Author: Henry
 	public void OpenOptions()
     {
         optionsCanvas.enabled = true;
-        //optionsCanvas.GetComponentInParent<GameObject>().SetActive(true);
     }
 
-	///Opens the play/level select menu. Author: NULL
+	///Opens the play/level select menu. Author: Henry
 	public void OpenPlay ()
     {
         playCanvas.enabled = true;
-        //playCanvas.GetComponentInParent<GameObject>().SetActive(true);
     }
 
 
 
-	///Quits the game. Author: NULL
+	///Quits the game. Author: Henry
 	public void Quit () {
-
+        Application.Quit();
 	}
 }
