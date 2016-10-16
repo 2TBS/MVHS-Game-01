@@ -2,15 +2,18 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class MainMenu : MonoBehaviour {
-
+public class MainMenu : MonoBehaviour
+{
+    #region vars
     public Canvas playCanvas;
     public Canvas optionsCanvas;
     public Canvas creditsCanvas;
+    #endregion
 
-    
-	// Use this for initialization
-	void Start () {
+    #region initialization
+    // Use this for initialization
+    void Start()
+    {
         playCanvas = playCanvas.GetComponent<Canvas>();
         optionsCanvas = optionsCanvas.GetComponent<Canvas>();
         creditsCanvas = creditsCanvas.GetComponent<Canvas>();
@@ -19,32 +22,53 @@ public class MainMenu : MonoBehaviour {
         optionsCanvas.enabled = false;
         creditsCanvas.enabled = false;
     }
+    #endregion
 
-	// Update is called once per frame
-	void Update () {
-	}
+    #region Updater
+    // Update is called once per frame
+    void Update()
+    {
+    }
+    #endregion
 
-    ///Opens the credits menu. Author: Henry
-    public void OpenCredits () {
+    #region Open Methods
+    ///<summary>Opens the credits menu.</summary>
+    ///<author>Henry</author>
+    public void OpenCredits()
+    {
         creditsCanvas.enabled = true;
-	}
+    }
 
-	///Opens the options menu. Author: Henry
-	public void OpenOptions()
+    ///<summary>Opens the options menu.</summary>
+    ///<author>Henry</author>
+    public void OpenOptions()
     {
         optionsCanvas.enabled = true;
     }
 
-	///Opens the play/level select menu. Author: Henry
-	public void OpenPlay ()
+    ///<summary>Opens the chapter select menu.</summary>
+    ///<author>Henry</author>
+    public void OpenPlay()
     {
         playCanvas.enabled = true;
     }
+    #endregion
 
+    #region close methods
+    ///<summary>closes all menus.</summary>
+    ///<author>Henry</author>
+    public void CloseMenu()
+    {
+        playCanvas.enabled = false;
+        optionsCanvas.enabled = false;
+        creditsCanvas.enabled = false;
+    }
 
-
-	///Quits the game. Author: Henry
-	public void Quit () {
+    ///<summary>Exits out of the application.</summary>
+    ///<author>Henry</author>
+    public void Quit()
+    {
         Application.Quit();
-	}
+    }
+    #endregion
 }
