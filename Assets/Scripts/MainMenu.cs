@@ -14,6 +14,10 @@ public class MainMenu : MonoBehaviour {
         playCanvas = playCanvas.GetComponent<Canvas>();
         optionsCanvas = optionsCanvas.GetComponent<Canvas>();
         creditsCanvas = creditsCanvas.GetComponent<Canvas>();
+
+        playCanvas.enabled = false;
+        optionsCanvas.enabled = false;
+        creditsCanvas.enabled = false;
     }
 
 	// Update is called once per frame

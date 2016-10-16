@@ -24,5 +24,6 @@ public class CloseOperation : MonoBehaviour {
         play.enabled = false;
         credits.enabled = false;
         options.enabled = false;
+        Debug.Log("Closed menus");
     }
 }
