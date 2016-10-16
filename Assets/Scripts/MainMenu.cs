@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-        playCanvas = playCanvas.GetComponentInParent<Canvas>();
+        playCanvas = playCanvas.GetComponent<Canvas>();
         optionsCanvas = optionsCanvas.GetComponent<Canvas>();
         creditsCanvas = creditsCanvas.GetComponent<Canvas>();
     }
@@ -21,19 +21,22 @@ public class MainMenu : MonoBehaviour {
 	}
 
   	public void OpenCredits () {
-        creditsCanvas.GetComponentInParent<GameObject>().SetActive(true);
+        optionsCanvas.enabled = true;
+        //creditsCanvas.GetComponentInParent<GameObject>().SetActive(true);
 	}
 
 	///Opens the options menu. Author: NULL
 	public void OpenOptions()
     {
-        optionsCanvas.GetComponentInParent<GameObject>().SetActive(true);
+        optionsCanvas.enabled = true;
+        //optionsCanvas.GetComponentInParent<GameObject>().SetActive(true);
     }
 
 	///Opens the play/level select menu. Author: NULL
 	public void OpenPlay ()
     {
-        playCanvas.GetComponentInParent<GameObject>().SetActive(true);
+        playCanvas.enabled = true;
+        //playCanvas.GetComponentInParent<GameObject>().SetActive(true);
     }
 
 
