@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayGame : MonoBehaviour {
+public class PlayGame : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
+	/// <summary>
+    /// Initializes the instance.
+    /// </summary>
+	void Start ()
+    {
 	
 	}
 	
