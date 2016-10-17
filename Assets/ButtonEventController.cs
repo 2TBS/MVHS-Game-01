@@ -1,6 +1,8 @@
 ﻿//SG 10/15/16
 //TO DO: 1.Find max chapter number(this will prolly be decided at the end of the game)
 //		 2.Implement behavior when max chapter number is reached. (Go back to chapter 1 or the "next" button disappears, etc.)
+//		 (2 is basically done, button is locked and grayed out, cant be licked when macChappter is reached)
+//		 3.Make code more elegant looking. Put nested if's into a seperate function.
 //Bugs found:
 //		 FIXED 1.First time the next button is clicked, chapterText doesn't change. Satrts working on 2nd click.
 using UnityEngine;
@@ -13,11 +15,14 @@ public class ButtonEventController : MonoBehaviour
 
 	*/
 	public int chapterSelected;
+	public int maxChapter;
 	public Text chapterText;
+	public Button nextButton;
+
 	public void Start()
 	{
-		//chapterText = GetComponent<Text> ();
 		chapterSelected=1;
+		maxChapter = 6; //6 is a random value I chose. Only for testing purposes can be changed to anything else.
 		Debug.Log ("Testing:chapterSelected is " + chapterSelected);
 	}
 	public void findClickedButton(string buttonPressed)
@@ -25,9 +30,17 @@ public class ButtonEventController : MonoBehaviour
 		if (buttonPressed.Equals ("next")) 
 		{
 			chapterSelected++;
+			if (chapterSelected == maxChapter) 	//not elegant code but whatever for now
+			{
+				nextButton.interactable = false;//lock button
+			}
 		} 
 		else if (buttonPressed.Equals ("previous") && chapterSelected >= 2) 
 		{
+			if (chapterSelected == maxChapter) 	//not elegant code but whatever for now
+			{
+				nextButton.interactable = true;//lock button
+			}
 			chapterSelected--;
 		} 
 		else if (buttonPressed.Equals ("play")) 
@@ -41,5 +54,6 @@ public class ButtonEventController : MonoBehaviour
 		Debug.Log (buttonPressed + " was clicked and chapterSelected is " + chapterSelected);
 		chapterText.text="Chapter " + chapterSelected + ", the blah blah";
 	}
+
 }
 
