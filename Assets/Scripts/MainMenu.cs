@@ -11,7 +11,9 @@ public class MainMenu : MonoBehaviour
     #endregion
 
     #region initialization
-    // Use this for initialization
+    /// <summary>
+    /// Initializes the canvas objects and hides them.
+    /// </summary>
     void Start()
     {
         playCanvas = playCanvas.GetComponent<Canvas>();
@@ -25,29 +27,35 @@ public class MainMenu : MonoBehaviour
     #endregion
 
     #region Updater
-    // Update is called once per frame
+    /// Update is called once per frame
     void Update()
     {
     }
     #endregion
 
     #region Open Methods
-    ///<summary>Opens the credits menu.</summary>
-    ///<author>Henry</author>
+    /// <summary>                   
+    /// Opens the credits menu.
+    /// </summary>
+    /// <author> Henry</author>
     public void OpenCredits()
     {
         creditsCanvas.enabled = true;
     }
 
-    ///<summary>Opens the options menu.</summary>
-    ///<author>Henry</author>
+    /// <summary>
+    /// Opens the options menu.
+    /// </summary>
+    /// <author> Henry</author>
     public void OpenOptions()
     {
         optionsCanvas.enabled = true;
     }
 
-    ///<summary>Opens the chapter select menu.</summary>
-    ///<author>Henry</author>
+    /// <summary>
+    /// Opens the chapter select menu.
+    /// </summary>
+    /// <author> Henry</author>
     public void OpenPlay()
     {
         playCanvas.enabled = true;
@@ -55,8 +63,10 @@ public class MainMenu : MonoBehaviour
     #endregion
 
     #region close methods
-    ///<summary>closes all menus.</summary>
-    ///<author>Henry</author>
+    /// <summary>
+    /// closes all menus.
+    /// </summary>
+    /// <author> Henry</author>
     public void CloseMenu()
     {
         playCanvas.enabled = false;
@@ -64,8 +74,10 @@ public class MainMenu : MonoBehaviour
         creditsCanvas.enabled = false;
     }
 
-    ///<summary>Exits out of the application.</summary>
-    ///<author>Henry</author>
+    /// <summary>
+    /// Exits out of the application.
+    /// </summary>
+    /// <author>Henry</author>
     public void Quit()
     {
         Application.Quit();
