@@ -1,10 +1,10 @@
 # =============== #
 # Unity generated #
 # =============== #
-MVGD-Game-01/[Tt]emp/
-MVGD-Game-01/[Oo]bj/
-MVGD-Game-01/[Bb]uild
-MVGD-Game-01/Library
+/Temp/
+/obj/
+/Build
+/Library/
 sysinfo.txt
 *.stackdump
  
@@ -32,6 +32,6 @@ ehthumbs.db
 [Tt]humbs.db
 [Dd]esktop.ini
 .vscode/settings.json
-MVGD-Game-01/Assembly-CSharp-Editor-firstpass.csproj
-MVGD-Game-01/Assembly-CSharp-firstpass.csproj
-MVGD-Game-01/Assembly-CSharp-Editor.csproj
+/Assembly-CSharp-Editor-firstpass.csproj
+/Assembly-CSharp-firstpass.csproj
+/Assembly-CSharp-Editor.csproj
