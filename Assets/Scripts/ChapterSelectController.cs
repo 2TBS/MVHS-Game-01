@@ -8,7 +8,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class ButtonEventController : MonoBehaviour
+public class ChapterSelectController : MonoBehaviour
 {
 	/*chapterSelected holds the int value of the chapter that the player is choosing
 		clicking the "next" button increments chapterSelected by 1 until max is reached
@@ -18,10 +18,12 @@ public class ButtonEventController : MonoBehaviour
 	public int maxChapter;
 	public Text chapterText;
 	public Button nextButton;
+	public Canvas homeCanvas;
 
 	public void Start()
 	{
 		chapterSelected=1;
+		homeCanvas.enabled = false;
 		maxChapter = 6; //6 is a random value I chose. Only for testing purposes can be changed to anything else.
 		Debug.Log ("Testing:chapterSelected is " + chapterSelected);
 	}
@@ -49,10 +51,10 @@ public class ButtonEventController : MonoBehaviour
 		} 
 		else if (buttonPressed.Equals ("exit")) 
 		{
-			//switch to aapropriate 
+			homeCanvas.enabled = true;//switch to aapropriate 
 		}
 		Debug.Log (buttonPressed + " was clicked and chapterSelected is " + chapterSelected);
-		chapterText.text="Chapter " + chapterSelected + ", the blah blah";
+		chapterText.text="Chapter " + chapterSelected + ": Name goes here";
 	}
 
 }
