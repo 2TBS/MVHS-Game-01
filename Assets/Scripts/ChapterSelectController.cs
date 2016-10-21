@@ -18,12 +18,12 @@ public class ChapterSelectController : MonoBehaviour
 	public int maxChapter;
 	public Text chapterText;
 	public Button nextButton;
-	public Canvas homeCanvas;
+	public Button previousButton;
 
 	public void Start()
 	{
 		chapterSelected=1;
-		homeCanvas.enabled = false;
+		previousButton.interactable = false;
 		maxChapter = 6; //6 is a random value I chose. Only for testing purposes can be changed to anything else.
 		Debug.Log ("Testing:chapterSelected is " + chapterSelected);
 	}
@@ -49,10 +49,19 @@ public class ChapterSelectController : MonoBehaviour
 		{
 			//switch to appropriate scene
 		} 
-		else if (buttonPressed.Equals ("exit")) 
+		if (chapterSelected > 1) 
 		{
-			homeCanvas.enabled = true;//switch to aapropriate 
+			previousButton.interactable = true;
+		} 
+		else 
+		{
+			previousButton.interactable = false;
 		}
+	
+		//looks like someone already made an exit button that works
+
+			
+
 		Debug.Log (buttonPressed + " was clicked and chapterSelected is " + chapterSelected);
 		chapterText.text="Chapter " + chapterSelected + ": Name goes here";
 	}
