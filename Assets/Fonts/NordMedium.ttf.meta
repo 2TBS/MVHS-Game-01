@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ff3ab307c3bdbe349b7ed6fe58320278
+timeCreated: 1477016210
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Nord
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: cbd38978ae0fabe45bbe6ae6145574db, type: 3}
+  - {fileID: 12800000, guid: 8408bcdb6911247409322c7ba481b11c, type: 3}
+  - {fileID: 12800000, guid: b74fa44f98d29ce4a9c63f28fdf941ee, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
