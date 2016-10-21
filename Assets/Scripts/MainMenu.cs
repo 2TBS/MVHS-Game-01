@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 using System.Collections;
 
 public class MainMenu : MonoBehaviour
@@ -8,6 +9,8 @@ public class MainMenu : MonoBehaviour
     public Canvas playCanvas;
     public Canvas optionsCanvas;
     public Canvas creditsCanvas;
+    public Canvas playPopup;
+
     #endregion
 
     #region initialization
@@ -16,13 +19,13 @@ public class MainMenu : MonoBehaviour
     /// </summary>
     void Start()
     {
-        playCanvas = playCanvas.GetComponent<Canvas>();
+        playCanvas =  playCanvas.GetComponent<Canvas>();
         optionsCanvas = optionsCanvas.GetComponent<Canvas>();
         creditsCanvas = creditsCanvas.GetComponent<Canvas>();
+        playPopup = playPopup.GetComponent<Canvas>();
 
-        playCanvas.enabled = false;
-        optionsCanvas.enabled = false;
-        creditsCanvas.enabled = false;
+        CloseMenu();
+
     }
     #endregion
 
@@ -30,6 +33,10 @@ public class MainMenu : MonoBehaviour
     /// Update is called once per frame
     void Update()
     {
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            CloseMenu();
+        }
     }
     #endregion
 
@@ -62,6 +69,12 @@ public class MainMenu : MonoBehaviour
     }
     #endregion
 
+    /// Opens the popup where you can select to play new game, load game, or select chapter. Author: Ben
+    public void OpenPopup()
+    {
+        playPopup.enabled = true;
+    }
+
     #region close methods
     /// <summary>
     /// closes all menus.
@@ -72,6 +85,7 @@ public class MainMenu : MonoBehaviour
         playCanvas.enabled = false;
         optionsCanvas.enabled = false;
         creditsCanvas.enabled = false;
+        playPopup.enabled = false;
     }
 
     /// <summary>
