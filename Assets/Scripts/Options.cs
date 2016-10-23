@@ -33,14 +33,19 @@ public class Options : MonoBehaviour {
 		mainMenu = mainMenu.GetComponent<Canvas> ();
 		fullscreen = fullscreen.GetComponent<Button> ();
 		fullscreenLabel = fullscreenLabel.GetComponent<Text> ();
-		//controls = controls.GetComponent<Controls> ();
+
+
+		//controls = controls.GetComponent<Controls > ();
 
 		volume.maxValue = 100;
 		volume.minValue = 0;
 		volume.wholeNumbers = true;
 
+		
+
 		generalPanel.transform.Rotate (20.0f, 0.0f, 0.0f);
-	
+
+		volume.enabled = true;
 	}
 
 	void Update () {
