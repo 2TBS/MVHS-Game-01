@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Options.cs" />
      <Compile Include="Assets\Scripts\Pl_InputManager.cs" />
      <Compile Include="Assets\Scripts\PlayGame.cs" />
+     <Compile Include="Assets\Scripts\SelectionPrompter.cs" />
      <Compile Include="Assets\Scripts\TestScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
