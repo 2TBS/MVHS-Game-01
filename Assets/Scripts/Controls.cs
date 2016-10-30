@@ -8,12 +8,12 @@ using System.Collections;
 public class Controls : MonoBehaviour {
 
 //List of editable controls
-public KeyCode Forward; //1
-public KeyCode Back; //2
+
 public KeyCode Left; //3
 public KeyCode Right; //4
 public KeyCode Jump; //5
 public KeyCode Run; //6
+public KeyCode Crouch;
 
 private KeyCode[] controlList;
 private Text[] textList;

@@ -8,6 +8,8 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
 public Pl_InputManager input;
+public float walkSpeed;
+public bool running;
 
 void Start() {
 
@@ -16,10 +18,18 @@ void Start() {
 
 void Update() {
 
-	if(input.GetKey("Forward")) {
-		//do stuff
-	} else if(input.GetKey("Back")) {
-		//do stuff
+	if(input.GetKey("Run")) {
+		running = true;
+	}
+	if(input.GetKey("Left")) {
+		if(running) 
+			/*stuff*/;
+		else /*stuff*/;
+
+	} else if(input.GetKey("Right")) {
+		if(running) 
+			/*stuff*/;
+		else /*stuff*/;
 	}
 
 	if(input.GetKey("Jump")) {
