@@ -21,8 +21,8 @@ Event currentEvent;
 	void Start () {
 
 		configPath = Application.dataPath + "/controls.cfg";
-		controlListNames = new string[] {"Forward","Back","Left","Right","Jump","Run"};
-		controlList = new KeyCode[] {Forward, Back, Left, Right, Jump, Run};
+		controlListNames = new string[] {"Left","Right","Jump","Run"};
+		controlList = new KeyCode[] {Left, Right, Jump, Run};
 		
 			if(File.Exists(configPath) && ControlsValid())  {
 				ReloadControls();

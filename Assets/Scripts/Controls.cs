@@ -26,10 +26,10 @@ Event currentEvent;
 	// Use this for initialization
 	void Start () {
 		configPath = Application.dataPath + "/controls.cfg";
-		controlList = new KeyCode[] {Forward, Back, Left, Right, Jump, Run};
+		controlList = new KeyCode[] {Left, Right, Jump, Run};
 		textList = new Text[] {
-		GameObject.Find("Forward").GetComponent<Text> (),
-		GameObject.Find("Back").GetComponent<Text> (),
+		//GameObject.Find("Forward").GetComponent<Text> (),
+		//GameObject.Find("Back").GetComponent<Text> (),
 		GameObject.Find("Left").GetComponent<Text> (),
 		GameObject.Find("Right").GetComponent<Text> (),
 		GameObject.Find("Jump").GetComponent<Text> (),

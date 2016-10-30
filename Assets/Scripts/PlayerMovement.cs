@@ -1,41 +1,75 @@
-﻿using UnityEngine;
+﻿#region Using Statements
+using UnityEngine;
 using System;
 using System.IO;
 using UnityEngine.UI;
 using System.Collections;
+#endregion
 
-///Methods for Control changing menu, with integrated InputManager by Ben C. 
-public class PlayerMovement : MonoBehaviour {
+/// <summary>
+/// Methods for Control changing menu, with integrated InputManager by Ben C. 
+/// </summary>
+public class PlayerMovement : MonoBehaviour
+{
+    #region Fields
+    public const float RUN_ADDITIONAL_SPEED = 1.25f;
+    public float crouchSpeedMult;
+    public Pl_InputManager input;
+    public float walkSpeed;
 
-public Pl_InputManager input;
-public float walkSpeed;
-public bool running;
+    public bool isCrouching;
+    public bool running;
+    #endregion
 
-void Start() {
+    #region Methods
+    void Start()
+    {
+        input = input.GetComponent<Pl_InputManager>();
+    }
 
-	input = input.GetComponent<Pl_InputManager> ();
-}
+    void Update()
+    {
+        Vector3 velocity = new Vector3(0, 0, 0);
+	    if(input.GetKey("Run"))
+        {
+            if (!isCrouching)
+		        running = true;
+	    }
+	    if(input.GetKey("Left"))
+        {
+            velocity.x -= walkSpeed;
 
-void Update() {
+            if (running && !isCrouching)
+                velocity.x -= RUN_ADDITIONAL_SPEED;
+            if (isCrouching)
+                velocity.x *= crouchSpeedMult;
+	    }
+        else if(input.GetKey("Right"))
+        {
+            velocity.x += walkSpeed;
 
-	if(input.GetKey("Run")) {
-		running = true;
-	}
-	if(input.GetKey("Left")) {
-		if(running) 
-			/*stuff*/;
-		else /*stuff*/;
+            if (running && !isCrouching)
+                velocity.x += RUN_ADDITIONAL_SPEED;
+            if (isCrouching)
+                velocity.x *= crouchSpeedMult;
 
-	} else if(input.GetKey("Right")) {
-		if(running) 
-			/*stuff*/;
-		else /*stuff*/;
-	}
+	    }
 
-	if(input.GetKey("Jump")) {
-		//do stuff
-	} else if(input.GetKey("Crouch")) {
-		//do stuff
-	}
-}
+	    if(input.GetKey("Jump")) {
+		    //do stuff
+	    }
+        if (input.GetKey("Crouch"))
+        {
+            isCrouching = true;
+        }
+        else
+            isCrouching = false;
+
+
+        // updates the position
+        Vector3 position = transform.position;
+
+        position += velocity;
+    }
+    #endregion
 }
