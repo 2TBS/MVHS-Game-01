@@ -16,7 +16,7 @@ public class SelectionPrompter : MonoBehaviour {
 	//Do nothing here
 	}
 
-	public void ShowButtons (String button1Text, String button2Text, String button3Text, String button4Text) {
+	public void ShowButtons (string button1Text, string button2Text, string button3Text, string button4Text) {
 		//Enable the four buttons, and wait for a response
 	}
 
