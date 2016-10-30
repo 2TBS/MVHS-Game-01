@@ -3,21 +3,10 @@ using System;
 using System.IO;
 
 /// <summary> Custom InputManager by dbqeo </summary>
-public class Pl_InputManager : MonoBehaviour {
+public class Pl_InputManager : Controls {
 
 //List of editable controls
 [SerializeField]
-private KeyCode Forward; //1
-[SerializeField]
-private KeyCode Back; //2
-[SerializeField]
-private KeyCode Left; //3
-[SerializeField]
-private KeyCode Right; //4
-[SerializeField]
-private KeyCode Jump; //5
-[SerializeField]
-private KeyCode Run; //6
 
 private KeyCode[] controlList;
 private string[] controlListNames;
@@ -71,27 +60,8 @@ Event currentEvent;
 		string[] lines = File.ReadAllLines(configPath);
 		return (KeyCode)System.Enum.Parse(typeof(KeyCode), lines[id-1]);
 	}
-	
-	public void ReloadControls () {
-		for(int i = 0; i < controlList.Length; i++) {
-			controlList[i] = Key(i+1);
-		}
-		
-		Debug.Log("Successfully reloaded controls");
-	}
 
-	private void WriteDefaultControls () {
-		Debug.Log("Writing default controls...");
-		File.WriteAllLines(configPath, defaultControls);
-		ReloadControls();
-	}
-	
-	private bool ControlsValid () {
-		try {
-			ReloadControls();
-			return true;
-		} catch {
-			return false;
-		}
+	public bool GetKey (String keyName) {
+		return Input.GetKey(Key(keyName));
 	}
 }

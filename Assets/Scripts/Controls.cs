@@ -116,7 +116,7 @@ Event currentEvent;
 		Debug.Log("Successfully reloaded controls");
 	}
 	
-	private bool ControlsValid () {
+	protected bool ControlsValid () {
 		try {
 			ReloadControls();
 			return true;
