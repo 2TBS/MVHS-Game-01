@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     #region Fields
     public const float RUN_ADDITIONAL_SPEED = 1.25f;
     public float crouchSpeedMult;
-    public Pl_InputManager input;
+    public Controls input;
     public float walkSpeed;
 
     public bool isCrouching;
@@ -24,18 +24,18 @@ public class PlayerMovement : MonoBehaviour
     #region Methods
     void Start()
     {
-        input = input.GetComponent<Pl_InputManager>();
+        input = input.GetComponent<Controls>();
     }
 
     void Update()
     {
         Vector3 velocity = new Vector3(0, 0, 0);
-	    if(input.GetKey("Run"))
+	    if(Input.GetKey(input.Run))
         {
             if (!isCrouching)
 		        running = true;
 	    }
-	    if(input.GetKey("Left"))
+	    if(Input.GetKey(input.Left))
         {
             velocity.x -= walkSpeed;
 
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             if (isCrouching)
                 velocity.x *= crouchSpeedMult;
 	    }
-        else if(input.GetKey("Right"))
+        else if(Input.GetKey(input.Right))
         {
             velocity.x += walkSpeed;
 
@@ -55,10 +55,10 @@ public class PlayerMovement : MonoBehaviour
 
 	    }
 
-	    if(input.GetKey("Jump")) {
+	    if(Input.GetKey(input.Jump)) {
 		    //do stuff
 	    }
-        if (input.GetKey("Crouch"))
+        if (Input.GetKey(input.Crouch))
         {
             isCrouching = true;
         }
@@ -70,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 position = transform.position;
 
         position += velocity;
+
+        transform.position = position;
     }
     #endregion
 }
