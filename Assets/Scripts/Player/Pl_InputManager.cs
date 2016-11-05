@@ -5,8 +5,6 @@ using System.IO;
 /// <summary> Custom InputManager by dbqeo </summary>
 public class Pl_InputManager : Controls {
 
-private string[] controlListNames;
-
 string[] defaultControls = {"W","S","A","D","Space","LeftShift"};
 
 string[] axes = {"Vertical","Horizontal"};
