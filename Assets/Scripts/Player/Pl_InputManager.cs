@@ -12,12 +12,10 @@ string[] axes = {"Vertical","Horizontal"};
 Event currentEvent;
 	// Use this for initialization
 	void Start () {
-
 		
-		
-			if(File.Exists(configPath) && ControlsValid())  {
-				ReloadControls();
-			} else {
+		if(File.Exists(configPath) && ControlsValid())  {
+			ReloadControls();
+		} else {
 			Debug.Log("Controls file is nonexistent or corrupted. Generating new one...");
 			using (var writer = new StreamWriter(File.Create(configPath))) {}
 			WriteDefaultControls();

@@ -9,17 +9,12 @@ public class Controls : MonoBehaviour {
 
 //List of editable controls
 
-public KeyCode Left; //3
-public KeyCode Right; //4
-public KeyCode Jump; //5
-public KeyCode Run; //6
-public KeyCode Crouch;
-
+public KeyCode Left, Right, Jump, Run, Crouch;
 protected KeyCode[] controlList;
 protected Text[] textList;
 protected string[] controlListNames;
 protected String configPath; 
-string[] defaultControls = {"W","S","A","D","Space","LeftShift"};
+string[] defaultControls = {"A","D","Space","LeftShift", "S"};
 public Text infoText;
 
 
