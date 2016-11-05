@@ -5,12 +5,7 @@ using System.IO;
 /// <summary> Custom InputManager by dbqeo </summary>
 public class Pl_InputManager : Controls {
 
-//List of editable controls
-[SerializeField]
-
-private KeyCode[] controlList;
 private string[] controlListNames;
-private String configPath; 
 
 string[] defaultControls = {"W","S","A","D","Space","LeftShift"};
 
@@ -20,9 +15,7 @@ Event currentEvent;
 	// Use this for initialization
 	void Start () {
 
-		configPath = Application.dataPath + "/controls.cfg";
-		controlListNames = new string[] {"Left","Right","Jump","Run"};
-		controlList = new KeyCode[] {Left, Right, Jump, Run};
+		
 		
 			if(File.Exists(configPath) && ControlsValid())  {
 				ReloadControls();

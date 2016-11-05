@@ -15,32 +15,31 @@ public KeyCode Jump; //5
 public KeyCode Run; //6
 public KeyCode Crouch;
 
-private KeyCode[] controlList;
-private Text[] textList;
-
-private String configPath; 
+protected KeyCode[] controlList;
+protected Text[] textList;
+protected string[] controlListNames;
+protected String configPath; 
 string[] defaultControls = {"W","S","A","D","Space","LeftShift"};
 public Text infoText;
+
 
 Event currentEvent;
 	// Use this for initialization
 	void Start () {
+		controlListNames = new string[] {"Left","Right","Jump","Run", "Crouch"};
 		configPath = Application.dataPath + "/controls.cfg";
 		controlList = new KeyCode[] {Left, Right, Jump, Run};
-		textList = new Text[] {
-		//GameObject.Find("Forward").GetComponent<Text> (),
-		//GameObject.Find("Back").GetComponent<Text> (),
-		GameObject.Find("Left").GetComponent<Text> (),
-		GameObject.Find("Right").GetComponent<Text> (),
-		GameObject.Find("Jump").GetComponent<Text> (),
-		GameObject.Find("Run").GetComponent<Text> ()
-		};
+
+		for(int i = 0; i <= controlList.Length; i++)
+		{
+			textList[i] = GameObject.Find(controlListNames[i]).GetComponent<Text> ();
+		}
 		
 		infoText = infoText.GetComponent<Text> ();
 		infoText.enabled = false;
 		
 		
-			if(File.Exists(configPath) && ControlsValid())  {
+		if(File.Exists(configPath) && ControlsValid())  {
 			Debug.Log("Successfully loaded controls file");
 			} else {
 			Debug.Log("Controls file is nonexistent or corrupted. Generating new one...");
