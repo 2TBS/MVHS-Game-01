@@ -19,6 +19,8 @@ sysinfo.txt
 /*.suo
 /*.user
 /*.booproj
+/*.csproj
+/*.sln
  
 # ============ #
 # OS generated #
