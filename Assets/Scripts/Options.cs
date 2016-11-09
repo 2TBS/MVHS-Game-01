@@ -22,51 +22,51 @@ public class Options : MonoBehaviour {
 	
 	void Start () {
 		
-		volume = volume.GetComponent<Slider> ();
+		//volume = volume.GetComponent<Slider> ();
 		dropdown = dropdown.GetComponent<Dropdown> ();
-		volumeValue = volumeValue.GetComponent<Text> ();
+		//volumeValue = volumeValue.GetComponent<Text> ();
 		generalPanel = generalPanel.GetComponent<Canvas> ();
-		controlsPanel = controlsPanel.GetComponent<Canvas> ();
+		//controlsPanel = controlsPanel.GetComponent<Canvas> ();
 		graphics = graphics.GetComponent<Dropdown> ();
 		resolution = resolution.GetComponent<Dropdown> ();
 		optionsMenu = optionsMenu.GetComponent<Canvas> ();
 		mainMenu = mainMenu.GetComponent<Canvas> ();
-		fullscreen = fullscreen.GetComponent<Button> ();
-		fullscreenLabel = fullscreenLabel.GetComponent<Text> ();
+		//fullscreen = fullscreen.GetComponent<Button> ();
+		//fullscreenLabel = fullscreenLabel.GetComponent<Text> ();
 
 
 		//controls = controls.GetComponent<Controls > ();
 
-		volume.maxValue = 100;
-		volume.minValue = 0;
-		volume.wholeNumbers = true;
+		//volume.maxValue = 100;
+		//volume.minValue = 0;
+		//volume.wholeNumbers = true;
 
 		
 
 		generalPanel.transform.Rotate (20.0f, 0.0f, 0.0f);
 
-		volume.enabled = true;
+		//volume.enabled = true;
 	}
 
 	void Update () {
 		
-		fullscreenLabel.text = (Screen.fullScreen) ? "Enabled" : "Disabled";
+		//fullscreenLabel.text = (Screen.fullScreen) ? "Enabled" : "Disabled";
 		if(Input.GetKey(KeyCode.F11)) fullscreenToggle();
 		if(Screen.width > 1300) mainMenu.scaleFactor = 2;
 		else if(Screen.width < 700) mainMenu.scaleFactor = .5f;
 		else mainMenu.scaleFactor = 1;
 			
-		AudioListener.volume = volume.value / 100;
+		//AudioListener.volume = volume.value / 100;
 
-		volumeValue.text = volume.value.ToString ();
+		//volumeValue.text = volume.value.ToString ();
 
 		//Which panel is active
 		if(dropdown.value == 0 && optionsMenu.enabled) {
 			generalPanel.enabled = true;
-			controlsPanel.enabled = false;
+			//controlsPanel.enabled = false;
 		}  else if(dropdown.value == 1) {
 			generalPanel.enabled = false;
-			controlsPanel.enabled = true;
+			//controlsPanel.enabled = true;
 		}
 
 		//Graphics setting
@@ -120,11 +120,11 @@ public class Options : MonoBehaviour {
 	public void resetOptions() {
 		if(generalPanel.enabled) {
 			graphics.value = 4;
-		volume.value = 50;
+		//volume.value = 50;
 		resolution.value = 1;
-		} else if(controlsPanel.enabled) {
+		} //else if(controlsPanel.enabled) {
 			//controls.WriteDefaultControls();
-		}
+		//}
 		
 	}
 	
