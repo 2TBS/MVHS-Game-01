@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.IO;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -95,6 +96,12 @@ public class MainMenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    ///Load selected scene. Valid Scene ID's: MainMenu, Intro, Scene_X Author: Ben C 
+    public void LoadScene(string sceneID)
+    {
+        SceneManager.LoadScene(sceneID);
     }
     #endregion
 }
