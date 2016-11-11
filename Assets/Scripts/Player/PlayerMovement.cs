@@ -11,31 +11,45 @@ using System.Collections;
 /// </summary>
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField]
     #region Fields
     public const float RUN_ADDITIONAL_SPEED = 1.25f;
     public float crouchSpeedMult;
     public Pl_InputManager input;
+    public CharacterController controller;
     public float walkSpeed;
 
     public bool isCrouching;
     public bool running;
+
+    public Vector3 velocity;
+
+
     #endregion
 
     #region Methods
     void Start()
     {
-        input = input.GetComponent<Pl_InputManager>();
+        input = GetComponentInParent<Pl_InputManager>();
+        controller = GetComponentInParent<CharacterController>();
+        velocity = new Vector3(0, 0, 0);
+    }
+
+    void FixedUpdate()
+    {
+
     }
 
     void Update()
     {
-        Vector3 velocity = new Vector3(0, 0, 0);
-	    if(input.GetKey("Run"))
+        if (input.GetKey("Run"))
         {
             if (!isCrouching)
-		        running = true;
-	    }
-	    if(Input.GetKey(input.Left))
+                running = true;
+        }
+        else running = false;
+
+        if (Input.GetKey(input.Left))
         {
             velocity.x -= walkSpeed;
 
@@ -43,8 +57,8 @@ public class PlayerMovement : MonoBehaviour
                 velocity.x -= RUN_ADDITIONAL_SPEED;
             if (isCrouching)
                 velocity.x *= crouchSpeedMult;
-	    }
-        else if(input.GetKey("Right"))
+        }
+        else if (input.GetKey("Right"))
         {
             velocity.x += walkSpeed;
 
@@ -53,11 +67,12 @@ public class PlayerMovement : MonoBehaviour
             if (isCrouching)
                 velocity.x *= crouchSpeedMult;
 
-	    }
+        }
 
-	    if(input.GetKey("Jump")) {
-		    //do stuff
-	    }
+        if (input.GetKey("Jump"))
+        {
+
+        }
         if (input.GetKey("Crouch"))
         {
             isCrouching = true;
@@ -67,11 +82,16 @@ public class PlayerMovement : MonoBehaviour
 
 
         // updates the position
-        Vector3 position = transform.position;
+        controller.Move(velocity);
+        velocity = new Vector3(0, velocity.y, 0);
 
-        position += velocity;
 
-        transform.position = position;
+        //gravity
+        if (!controller.isGrounded)
+            velocity.y -= Time.deltaTime * 2;
+
     }
+
+
     #endregion
 }
