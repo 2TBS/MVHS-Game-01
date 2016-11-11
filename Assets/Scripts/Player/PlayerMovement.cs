@@ -14,22 +14,31 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     #region Fields
     public const float RUN_ADDITIONAL_SPEED = 1.25f;
-    public float crouchSpeedMult;
+
+    //number of seconds to move upwards
+    public const float JUMP_LIMIT = 0.5f;
+    public const float JUMP_SPEED = 0.9f;
+    public const float CROUCH_SPEED_MULT = 0.5f;
+    public const float WALK_SPEED = 1f;
     public Pl_InputManager input;
     public CharacterController controller;
-    public float walkSpeed;
+   
 
-    public bool isCrouching;
-    public bool running;
+    private bool isCrouching;
+    private bool running;
+    public bool jumping;
 
+    //The relative velocity of the player
     public Vector3 velocity;
 
+    public float timer;
 
     #endregion
 
     #region Methods
     void Start()
     {
+        timer = 0;
         input = GetComponentInParent<Pl_InputManager>();
         controller = GetComponentInParent<CharacterController>();
         velocity = new Vector3(0, 0, 0);
@@ -51,28 +60,43 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(input.Left))
         {
-            velocity.x -= walkSpeed;
+            velocity.x -= WALK_SPEED;
 
             if (running && !isCrouching)
                 velocity.x -= RUN_ADDITIONAL_SPEED;
             if (isCrouching)
-                velocity.x *= crouchSpeedMult;
+                velocity.x *= CROUCH_SPEED_MULT;
         }
         else if (input.GetKey("Right"))
         {
-            velocity.x += walkSpeed;
+            velocity.x += WALK_SPEED;
 
             if (running && !isCrouching)
                 velocity.x += RUN_ADDITIONAL_SPEED;
             if (isCrouching)
-                velocity.x *= crouchSpeedMult;
+                velocity.x *= CROUCH_SPEED_MULT;
 
         }
 
-        if (input.GetKey("Jump"))
+        if (input.GetKey("Jump") && !jumping)
         {
-
+            
+            jumping = true;
+            while(jumping)
+                if(timer < JUMP_LIMIT)
+                {
+                    
+                    velocity.y += Mathf.Sin(Mathf.PI * JUMP_SPEED);
+                    timer += Time.deltaTime;
+                }
+                else {
+                    jumping = false;
+                    timer = 0;
+                }
+              
+            
         }
+
         if (input.GetKey("Crouch"))
         {
             isCrouching = true;
@@ -87,8 +111,9 @@ public class PlayerMovement : MonoBehaviour
 
 
         //gravity
-        if (!controller.isGrounded)
+        if (!controller.isGrounded && !jumping)
             velocity.y -= Time.deltaTime * 2;
+        else if (!jumping) velocity.y = 0;
 
     }
 
