@@ -16,10 +16,11 @@ public class PlayerMovement : MonoBehaviour
     public const float RUN_ADDITIONAL_SPEED = 1.25f;
 
     //number of seconds to move upwards
-    public const float JUMP_LIMIT = 0.5f;
-    public const float JUMP_SPEED = 0.9f;
-    public const float CROUCH_SPEED_MULT = 0.5f;
-    public const float WALK_SPEED = 1f;
+    public float JUMP_LIMIT = 0.5f;
+    public float JUMP_SPEED = 0.9f;
+    public float CROUCH_SPEED_MULT = 0.5f;
+    public float WALK_SPEED = 1f;
+    
     public Pl_InputManager input;
     public CharacterController controller;
    
@@ -78,16 +79,16 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if (input.GetKey("Jump") && !jumping)
+        if (input.GetKeyDown("Jump") && !jumping)
         {
             
             jumping = true;
             while(jumping)
-                if(timer < JUMP_LIMIT)
+                if(timer < JUMP_LIMIT && velocity.y >= -0.07)
                 {
                     
                     velocity.y += Mathf.Sin(Mathf.PI * JUMP_SPEED);
-                    timer += Time.deltaTime;
+                    timer += JUMP_LIMIT / 2;
                 }
                 else {
                     jumping = false;

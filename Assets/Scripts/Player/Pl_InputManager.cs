@@ -51,6 +51,10 @@ protected Event currentEvent;
 	public bool GetKey (string id) {
 		return Input.GetKey(Key(id));
 	}
+
+	public bool GetKeyDown (string id) {
+		return Input.GetKeyDown(Key(id));
+	}
 	
 	public void WriteDefaultControls () {
 		Debug.Log("Writing default controls...");
