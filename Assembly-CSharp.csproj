@@ -55,9 +55,10 @@
      <Compile Include="Assets\Scripts\Player\Pl_InputManager.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Scene\GenericScene.cs" />
+     <Compile Include="Assets\Scripts\Scene\Intro.cs" />
      <Compile Include="Assets\Scripts\SelectionPrompter.cs" />
      <Compile Include="Assets\Scripts\SetControls.cs" />
-     <Compile Include="Assets\Scripts\TestScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

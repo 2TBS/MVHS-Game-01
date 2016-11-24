@@ -1,16 +1,15 @@
-﻿//MVGD
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public class TestScript : MonoBehaviour {
+public class Intro : MonoBehaviour {
 
-	// Use this for initializatio
+	// Use this for initialization
 	void Start () {
-
+	
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
-
+	
 	}
 }
