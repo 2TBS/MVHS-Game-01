@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ChapterSelectController.cs" />
+     <Compile Include="Assets\Scripts\EssentialScripts\FileIO.cs" />
+     <Compile Include="Assets\Scripts\EssentialScripts\TestInputManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Options.cs" />
      <Compile Include="Assets\Scripts\PlayGame.cs" />

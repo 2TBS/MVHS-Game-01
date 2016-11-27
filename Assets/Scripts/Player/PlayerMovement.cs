@@ -17,7 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     //number of seconds to move upwards
     public float JUMP_LIMIT = 0.5f;
+    //velocity in which to accelerate upwards
     public float JUMP_SPEED = 0.9f;
+    //speed to move at while crouching relative to regular WALK_SPEED
     public float CROUCH_SPEED_MULT = 0.5f;
     public float WALK_SPEED = 1f;
     
@@ -79,12 +81,12 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if (input.GetKeyDown("Jump") && !jumping)
+        if (input.GetKey("Jump") && controller.isGrounded)
         {
             
             jumping = true;
             while(jumping)
-                if(timer < JUMP_LIMIT && velocity.y >= -0.07)
+                if(timer < JUMP_LIMIT)
                 {
                     
                     velocity.y += Mathf.Sin(Mathf.PI * JUMP_SPEED);
@@ -94,8 +96,6 @@ public class PlayerMovement : MonoBehaviour
                     jumping = false;
                     timer = 0;
                 }
-              
-            
         }
 
         if (input.GetKey("Crouch"))

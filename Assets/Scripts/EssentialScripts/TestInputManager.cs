@@ -6,7 +6,7 @@ using System.Collections;
 using FileIO;
 
 ///Methods for Control changing menu, with integrated InputManager by Ben C. 
-public class Pl_InputManager : MonoBehaviour {
+public class TestInputManager : MonoBehaviour {
 
 //List of editable controls
 public KeyCode Left, Right, Jump, Run, Crouch;
